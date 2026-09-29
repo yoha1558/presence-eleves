@@ -1,0 +1,20 @@
+{
+  "name": "presence-generator",
+  "version": "1.0.0",
+  "description": "Generateur PWA Presences",
+  "main": "generate.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node generate.js"
+  },
+  "keywords": [],
+  "author": "Yohann PIAU",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.6.1",
+    "archiver": "^8.0.0",
+    "exceljs": "^4.4.0",
+    "fs-extra": "^11.4.1",
+    "xlsx": "^0.18.5"
+  }
+}
