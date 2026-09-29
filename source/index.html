@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Présences Élèves</title>
+
+    <meta name="theme-color"
+          content="#2563eb">
+
+    <meta name="description"
+          content="Application de gestion des présences">
+
+    <link rel="manifest"
+          href="./manifest.json">
+
+    <link rel="stylesheet"
+          href="./css/app.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>📚 Présences Élèves</h1>
+
+    <div class="toolbar">
+
+        <label for="sessionDate">
+            Séance :
+        </label>
+
+        <select id="sessionDate">
+            <option>Chargement...</option>
+        </select>
+
+    </div>
+
+</header>
+
+<main>
+
+    <section>
+
+        <h2>Feuille d'appel</h2>
+
+        <div id="students">
+            <p>Chargement des élèves...</p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <button id="saveBtn">
+        💾 Enregistrer
+    </button>
+
+    <button id="exportBtn">
+        📊 Export Excel
+    </button>
+
+</footer>
+
+<script type="module" src="./js/app.js"></script>
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(() => {
+
+                console.log(
+                    "Service Worker installé"
+                );
+
+            })
+            .catch(error => {
+
+                console.error(error);
+
+            });
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
